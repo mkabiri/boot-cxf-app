@@ -1,15 +1,14 @@
 package org.sj.ws.app.web.rest;
 
+import org.sj.ws.app.model.Tests;
 import org.sj.ws.app.service.TestService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.Response;
-import java.util.List;
 
 /**
- * Created by Sangram on 16-04-2016.
+ * Rest Resource for Test
  */
 @Path("/tests")
 public class RestTestResource {
@@ -26,6 +25,6 @@ public class RestTestResource {
      */
     @GET
     public Response getTests(){
-        return Response.ok(this.service.getTests()).build();
+        return Response.ok(new Tests(this.service.getTests())).build();
     }
 }

@@ -1,12 +1,10 @@
 package org.sj.ws.app.web.soap;
 
+import org.sj.ws.app.model.Test;
 import org.sj.ws.app.service.TestService;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -22,7 +20,7 @@ public class SoapTestResource {
     }
 
     @WebMethod
-    public List<String> getTests() {
+    public List<Test> getTests() {
         return this.service.getTests();
     }
 }

@@ -1,17 +1,19 @@
 package org.sj.ws.app.service;
 
+import org.sj.ws.app.model.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Sangram on 17-04-2016.
+ * Test Service
  */
 public class TestService {
 
-    public List<String> getTests(){
-        List<String> tests = new ArrayList<>();
-        tests.add("o");
-        tests.add("3");
+    public List<Test> getTests(){
+        List<Test> tests = new ArrayList<>();
+        tests.add(new Test("a"));
+        tests.add(new Test("b"));
         return tests;
     }
 }
