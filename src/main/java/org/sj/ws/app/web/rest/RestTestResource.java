@@ -20,8 +20,12 @@ public class RestTestResource {
         this.service = service;
     }
 
+    /**
+     * XML marshalling is not working for generic types. We need to wrap them. GenericEntity is not working.
+     * @return
+     */
     @GET
     public Response getTests(){
-        return Response.ok(new GenericEntity<List<String>>(this.service.getTests()) {}).build();
+        return Response.ok(this.service.getTests()).build();
     }
 }
